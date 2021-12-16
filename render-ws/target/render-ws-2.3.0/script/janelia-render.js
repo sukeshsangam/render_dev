@@ -169,8 +169,11 @@ var JaneliaQueryParameters = function() {
     var re = /([^&=]+)=([^&]*)/g;
     var m;
     while (m = re.exec(queryString)) {
+        console.log(m);
         this.map[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
     }
+    console.log(queryString);
+    console.log("helloooooo")
     console.log(this.map);
 };
 
@@ -542,6 +545,8 @@ JaneliaRenderServiceDataUI.prototype.isNdvizHostDefined = function() {
 };
 
 JaneliaRenderServiceDataUI.prototype.isOpenseadragonHostDefined = function() {
+    console.log("this is openseadragon");
+    console.log(this.openseadragonHost);
     return typeof this.openseadragonHost !== 'undefined';
 };
 
@@ -559,6 +564,11 @@ JaneliaRenderServiceDataUI.prototype.buildStackQueryParameters = function(owner,
         ['renderStack', stack],
         ['dynamicRenderHost', this.dynamicRenderHost],
         ['openseadragonHost', this.openseadragonHost],
+        ['openseadragonDataHost', this.openseadragonDataHost],
+        ['openseadragonDataSourceFolder', this.openseadragonDataSourceFolder],
+        ['openseadragonDataDestinationFolder', this.openseadragonDataDestinationFolder],
+        ['openseadragonPythonFile', this.openseadragonPythonFile],
+        ['openseadragonMagicSlicer', this.openseadragonMagicSlicer],
         ['catmaidHost', this.catmaidHost],
         ['ndvizHost', this.ndvizHost]
     ];
@@ -661,6 +671,7 @@ JaneliaRenderServiceDataUI.prototype.getStackSummaryHtml = function(ownerUrl, st
                 // linksHtml = linksHtml + ' <a target="_blank" href="' + openseadragonUrl + '">Prepare data for Openseadragon</a>';
                //linksHtml = linksHtml + '<a href="" class="btn" onclick="return check()">Prepare Data for Openseadragon</a>';
                     linksHtml = linksHtml + '<button id="myBtn">Prepare data for openseadragon</button>';
+                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataHost" value="'+this.openseadragonHost+'">';
                   linksHtml = linksHtml + ' <a target="_blank" href="' + openseadragonUrl + '">Openseadragon</a>';
             }
             else{

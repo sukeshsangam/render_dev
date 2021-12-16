@@ -65,7 +65,13 @@
           renderWebServiceViews.setUpHostData('dynamicRenderHost');
           renderWebServiceViews.setUpHostData('openseadragonHost');
           renderWebServiceViews.setUpHostData('catmaidHost');
+          renderWebServiceViews.setUpHostData('openseadragonDataHost');
+          renderWebServiceViews.setUpHostData('openseadragonDataSourceFolder');
+          renderWebServiceViews.setUpHostData('openseadragonDataDestinationFolder');
+          renderWebServiceViews.setUpHostData('openseadragonPythonFile');
+          renderWebServiceViews.setUpHostData('openseadragonMagicSlicer');
           renderWebServiceViews.setUpHostData('ndvizHost');
+
 
           new JaneliaMatchServiceDataUI(
                   renderWebServiceViews.parameters,
@@ -117,6 +123,16 @@
           <span class="selectSpan">OPENSEADRAGON Host (e.g. 'renderer-openseadragon:8000'):</span>
           <input id="openseadragonHost" title="openseadragonHost" type="text" style="width:30em"
                  onchange="renderWebServiceViews.updateParameter('openseadragonHost', this.value)">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+        </td>
+        <td>
+          <span class="selectSpan">OPENSEADRAGON DATA Host (e.g. 'renderer-openseadragon:8000'):</span>
+          <input id="openseadragonDataHost" title="openseadragonDataHost" type="text" style="width:30em"
+                 onchange="renderWebServiceViews.updateParameter('openseadragonDataHost', this.value)">
         </td>
       </tr>
 
