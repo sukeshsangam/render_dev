@@ -677,7 +677,11 @@ JaneliaRenderServiceDataUI.prototype.getStackSummaryHtml = function(ownerUrl, st
                 // linksHtml = linksHtml + ' <a target="_blank" href="' + openseadragonUrl + '">Prepare data for Openseadragon</a>';
                //linksHtml = linksHtml + '<a href="" class="btn" onclick="return check()">Prepare Data for Openseadragon</a>';
                     linksHtml = linksHtml + '<button id="myBtn">Prepare data for openseadragon</button>';
-                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataHost" value="'+this.openseadragonHost+'">';
+                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataHost" value="'+this.openseadragonDataHost+'">';
+                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataSourceFolder" value="'+this.openseadragonDataSourceFolder+'">';
+                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataDestinationFolder" value="'+this.openseadragonDataDestinationFolder+'">';
+                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonPythonFile" value="'+this.openseadragonPythonFile+'">';
+                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonMagicSlicer" value="'+this.openseadragonMagicSlicer+'">';
                   linksHtml = linksHtml + ' <a target="_blank" href="' + openseadragonUrl + '">Openseadragon</a>';
             }
             else{
