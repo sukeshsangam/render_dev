@@ -90,6 +90,11 @@ ENV JAVA_OPTIONS="-Xms45g -Xmx45g -server -Djava.awt.headless=true" \
     NDVIZPORT="" \
     NDVIZ_URL="" \
     VIEW_OPENSEADRAGON_HOST_AND_PORT="http://bioimg-wkst10:8080/render-ws/view/openseadragon.html" \
+    VIEW_OPENSEADRAGON_DATA_HOST="http://bioimg-wkst10:5000/sharedresources/cbi/common/derived_data_for_visualization/derived_perm/openseadragon/"
+    VIEW_OPENSEADRAGON_DATA_SOURCE_FOLDER="/research/sharedresources/cbi/common/derived_data_for_visualization/derived_perm/source/"
+    VIEW_OPENSEADRAGON_DATA_DESTINATION_FOLDER="/research/sharedresources/cbi/common/derived_data_for_visualization/derived_perm/openseadragon/"
+    VIEW_OPENSEADRAGON_PYTHON_FILE="/research/sharedresources/cbi/common/derived_data_preparation_code/data_preparation.py"
+    VIEW_OPENSEADRAGON_MAGIC_SLICER="/research/sharedresources/cbi/common/derived_data_preparation_code/MagickSlicer/magic-slicer.sh"
     VIEW_CATMAID_HOST_AND_PORT="" \
     VIEW_DYNAMIC_RENDER_HOST_AND_PORT="" \
     VIEW_RENDER_STACK_OWNER="" \

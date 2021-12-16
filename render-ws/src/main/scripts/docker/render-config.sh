@@ -33,6 +33,11 @@ NDVIZPORT=$(stripQuotes ${NDVIZPORT})
 NDVIZ_URL=$(stripQuotes ${NDVIZ_URL})
 
 VIEW_OPENSEADRAGON_HOST_AND_PORT=$(stripQuotes ${VIEW_OPENSEADRAGON_HOST_AND_PORT})
+VIEW_OPENSEADRAGON_DATA_HOST=$(stripQuotes ${VIEW_OPENSEADRAGON_DATA_HOST})
+VIEW_OPENSEADRAGON_DATA_SOURCE_FOLDER=$(stripQuotes ${VIEW_OPENSEADRAGON_DATA_SOURCE_FOLDER})
+VIEW_OPENSEADRAGON_DATA_DESTINATION_FOLDER=$(stripQuotes ${VIEW_OPENSEADRAGON_DATA_DESTINATION_FOLDER})
+VIEW_OPENSEADRAGON_PYTHON_FILE=$(stripQuotes ${VIEW_OPENSEADRAGON_PYTHON_FILE})
+VIEW_OPENSEADRAGON_MAGIC_SLICER=$(stripQuotes ${VIEW_OPENSEADRAGON_MAGIC_SLICER})
 VIEW_CATMAID_HOST_AND_PORT=$(stripQuotes ${VIEW_CATMAID_HOST_AND_PORT})
 VIEW_DYNAMIC_RENDER_HOST_AND_PORT=$(stripQuotes ${VIEW_DYNAMIC_RENDER_HOST_AND_PORT})
 VIEW_RENDER_STACK_OWNER=$(stripQuotes ${VIEW_RENDER_STACK_OWNER})
@@ -149,6 +154,11 @@ fi
 
 sed -i """
   s@view.openseadragonHost=.*@view.openseadragonHost=${VIEW_OPENSEADRAGON_HOST_AND_PORT}@
+  s@view.openseadragonDataHost=.*@view.openseadragonDataHost=${VIEW_OPENSEADRAGON_DATA_HOST}@
+  s@view.openseadragonDataSourceFolder=.*@view.openseadragonDataSourceFolder=${VIEW_OPENSEADRAGON_DATA_SOURCE_FOLDER}@
+  s@view.openseadragonDataDestinationFolder=.*@view.openseadragonDataDestinationFolder=${VIEW_OPENSEADRAGON_DATA_DESTINATION_FOLDER}@
+  s@view.openseadragonPythonFile=.@view.openseadragonPythonFile=${VIEW_OPENSEADRAGON_PYTHON_FILE}@
+  s@view.openseadragonMagicSlicer=.@view.openseadragonMagicSlicer=${VIEW_OPENSEADRAGON_MAGIC_SLICER}@
   s@view.catmaidHost=.*@view.catmaidHost=${VIEW_CATMAID_HOST_AND_PORT}@
   s@view.dynamicRenderHost=.*@view.dynamicRenderHost=${VIEW_DYNAMIC_RENDER_HOST_AND_PORT}@
   s@view.matchOwner=.*@view.matchOwner=${VIEW_MATCH_OWNER}@

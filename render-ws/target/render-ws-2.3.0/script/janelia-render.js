@@ -445,6 +445,11 @@ var JaneliaRenderServiceDataUI = function(queryParameters, ownerSelectId, projec
     this.catmaidHost = queryParameters.map['catmaidHost'];
     this.ndvizHost = queryParameters.map['ndvizHost'];
     this.dynamicRenderHost = queryParameters.map['dynamicRenderHost'];
+    this.openseadragonDataHost = queryParameters.map['openseadragonDataHost'];
+    this.openseadragonDataSourceFolder = queryParameters.map['openseadragonDataSourceFolder'];
+    this.openseadragonDataDestinationFolder = queryParameters.map['openseadragonDataDestinationFolder'];
+    this.openseadragonPythonFile = queryParameters.map['openseadragonPythonFile'];
+    this.openseadragonMagicSlicer = queryParameters.map['openseadragonMagicSlicer'];
 
     this.renderServiceData = new JaneliaRenderServiceData(queryParameters.map[ownerSelectId],
                                                           queryParameters.map[projectSelectId],
@@ -650,12 +655,12 @@ JaneliaRenderServiceDataUI.prototype.getStackSummaryHtml = function(ownerUrl, st
     if (this.isOpenseadragonHostDefined()) {
             var openseadragonBaseUrl = 'http://' + this.openseadragonHost;
             //var openseadragonUrl = this.util.getCenteredCatmaidUrl(openseadragonBaseUrl, stackId, version, bounds, bounds.minZ, 8);
-            var openseadragonUrl = 'openseadragon.html?owner='+stackId.owner+'&project='+stackId.project+'&stack='+stackId.stack+'&z='+(bounds.maxZ-bounds.minZ);
+            var openseadragonUrl = 'openseadragon.html?owner='+stackId.owner+'&project='+stackId.project+'&stack='+stackId.stack+'&minz='+bounds.minZ+'&maxz='+bounds.maxZ;
             if(!("OpenseadragonData" in stackInfo)){
 
                 // linksHtml = linksHtml + ' <a target="_blank" href="' + openseadragonUrl + '">Prepare data for Openseadragon</a>';
                //linksHtml = linksHtml + '<a href="" class="btn" onclick="return check()">Prepare Data for Openseadragon</a>';
-                    linksHtml = linksHtml + '<button id="myBtn" onclick="testing();">Prepare data for openseadragon</button>';
+                    linksHtml = linksHtml + '<button id="myBtn">Prepare data for openseadragon</button>';
                   linksHtml = linksHtml + ' <a target="_blank" href="' + openseadragonUrl + '">Openseadragon</a>';
             }
             else{
