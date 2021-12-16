@@ -446,6 +446,7 @@ var JaneliaRenderServiceDataUI = function(queryParameters, ownerSelectId, projec
     this.queryParameters = queryParameters;
     this.openseadragonHost = queryParameters.map['openseadragonHost'];
     this.data_prep = queryParameters.map['data_prep'];
+    this.data_prepsh = queryParameters.map['data_prepsh'];
     this.catmaidHost = queryParameters.map['catmaidHost'];
     this.ndvizHost = queryParameters.map['ndvizHost'];
     this.dynamicRenderHost = queryParameters.map['dynamicRenderHost'];
@@ -584,6 +585,7 @@ JaneliaRenderServiceDataUI.prototype.buildStackQueryParameters = function(owner,
         ['dynamicRenderHost', this.dynamicRenderHost],
         ['openseadragonHost', this.openseadragonHost],
         ['data_prep', this.data_prep],
+        ['data_prepsh', this.data_prepsh],
         ['openseadragonPythonFile', this.openseadragonPythonFile],
         ['openseadragonMagicSlicer', this.openseadragonMagicSlicer],
         ['openseadragonDataHost', this.openseadragonDataHost],
@@ -693,6 +695,7 @@ JaneliaRenderServiceDataUI.prototype.getStackSummaryHtml = function(ownerUrl, st
                     linksHtml = linksHtml + '<button id="myBtn">Prepare data for openseadragon</button>';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataHost" value="'+this.openseadragonDataHost+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="data_prep" value="'+this.data_prep+'">';
+                    linksHtml = linksHtml + '<input type="hidden" id="data_prepsh" value="'+this.data_prepsh+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonPythonFile" value="'+this.openseadragonPythonFile+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonPythonFile" value="'+this.openseadragonMagicSlicer+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataSourceFolder" value="'+this.openseadragonDataSourceFolder+'">';

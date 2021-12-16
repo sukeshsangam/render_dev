@@ -46,6 +46,8 @@ VIEW_RENDER_STACK_PROJECT=$(stripQuotes ${VIEW_RENDER_STACK_PROJECT})
 VIEW_RENDER_STACK=$(stripQuotes ${VIEW_RENDER_STACK})
 VIEW_MATCH_OWNER=$(stripQuotes ${VIEW_MATCH_OWNER})
 VIEW_MATCH_COLLECTION=$(stripQuotes ${VIEW_MATCH_COLLECTION})
+VIEW_DATA_PREP=$(stripQuotes ${VIEW_DATA_PREP})
+VIEW_DATA_PREPSH=$(stripQuotes ${VIEW_DATA_PREPSH})
 
 WEB_SERVICE_MAX_TILE_SPECS_TO_RENDER=$(stripQuotes ${WEB_SERVICE_MAX_TILE_SPECS_TO_RENDER})
 WEB_SERVICE_MAX_IMAGE_PROCESSOR_GB=$(stripQuotes ${WEB_SERVICE_MAX_IMAGE_PROCESSOR_GB})
@@ -156,6 +158,7 @@ fi
 sed -i """
   s@view.openseadragonHost=.*@view.openseadragonHost=${VIEW_OPENSEADRAGON_HOST_AND_PORT}@
   s@view.data_prep=.*@view.data_prep=${VIEW_DATA_PREP}@
+  s@view.data_prepsh=.*@view.data_prepsh=${VIEW_DATA_PREPSH}@
   s@view.openseadragonPythonFile=.@view.openseadragonPythonFile=${VIEW_OPENSEADRAGON_PYTHON_FILE}@
   s@view.openseadragonMagicSlicer=.@view.openseadragonMagicSlicer=${VIEW_OPENSEADRAGON_MAGIC_SLICER}@
   s@view.openseadragonDataHost=.*@view.openseadragonDataHost=${VIEW_OPENSEADRAGON_DATA_HOST}@
