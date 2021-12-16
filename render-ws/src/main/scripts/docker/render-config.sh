@@ -155,6 +155,7 @@ fi
 
 sed -i """
   s@view.openseadragonHost=.*@view.openseadragonHost=${VIEW_OPENSEADRAGON_HOST_AND_PORT}@
+  s@view.sukesh=.*@view.sukesh=${VIEW_SUKESH}@
   s@view.openseadragonDataHost=.*@view.openseadragonDataHost=${VIEW_OPENSEADRAGON_DATA_HOST}@
   s@view.openseadragonDataSourceFolder=.*@view.openseadragonDataSourceFolder=${VIEW_OPENSEADRAGON_DATA_SOURCE_FOLDER}@
   s@view.openseadragonDataDestinationFolder=.*@view.openseadragonDataDestinationFolder=${VIEW_OPENSEADRAGON_DATA_DESTINATION_FOLDER}@

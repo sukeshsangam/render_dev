@@ -445,6 +445,7 @@ var JaneliaRenderServiceDataUI = function(queryParameters, ownerSelectId, projec
     this.shortbaseUrl = this.util.getShortRenderHost();
     this.queryParameters = queryParameters;
     this.openseadragonHost = queryParameters.map['openseadragonHost'];
+    this.sukesh = queryParameters.map['sukesh'];
     this.catmaidHost = queryParameters.map['catmaidHost'];
     this.ndvizHost = queryParameters.map['ndvizHost'];
     this.dynamicRenderHost = queryParameters.map['dynamicRenderHost'];
@@ -582,6 +583,7 @@ JaneliaRenderServiceDataUI.prototype.buildStackQueryParameters = function(owner,
         ['renderStack', stack],
         ['dynamicRenderHost', this.dynamicRenderHost],
         ['openseadragonHost', this.openseadragonHost],
+        ['sukesh', this.sukesh],
         ['openseadragonDataHost', this.openseadragonDataHost],
         ['openseadragonDataSourceFolder', this.openseadragonDataSourceFolder],
         ['openseadragonDataDestinationFolder', this.openseadragonDataDestinationFolder],
@@ -690,6 +692,7 @@ JaneliaRenderServiceDataUI.prototype.getStackSummaryHtml = function(ownerUrl, st
                //linksHtml = linksHtml + '<a href="" class="btn" onclick="return check()">Prepare Data for Openseadragon</a>';
                     linksHtml = linksHtml + '<button id="myBtn">Prepare data for openseadragon</button>';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataHost" value="'+this.openseadragonDataHost+'">';
+                    linksHtml = linksHtml + '<input type="hidden" id="sukesh" value="'+this.sukesh+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataSourceFolder" value="'+this.openseadragonDataSourceFolder+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataDestinationFolder" value="'+this.openseadragonDataDestinationFolder+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonPythonFile" value="'+this.openseadragonPythonFile+'">';
