@@ -551,9 +551,21 @@ JaneliaRenderServiceDataUI.prototype.isOpenseadragonHostDefined = function() {
 };
 
 JaneliaRenderServiceDataUI.prototype.isOpenseadragonDataHostDefined = function() {
-    console.log("this is openseadragonDataHost");
+   // console.log("this is openseadragonDataHost");
     //console.log(this.openseadragonDataHost);
     return typeof this.openseadragonDataHost !== 'undefined';
+};
+
+JaneliaRenderServiceDataUI.prototype.isOpenseadragonPythonFile = function() {
+   // console.log("this is openseadragonDataHost");
+    //console.log(this.openseadragonDataHost);
+    return typeof this.openseadragonPythonFile !== 'undefined';
+};
+
+JaneliaRenderServiceDataUI.prototype.isOpenseadragonMagicSlicer = function() {
+    //console.log("this is openseadragonDataHost");
+    //console.log(this.openseadragonDataHost);
+    return typeof this.openseadragonMagicSlicer !== 'undefined';
 };
 
 JaneliaRenderServiceDataUI.prototype.isCatmaidHostDefined = function() {
