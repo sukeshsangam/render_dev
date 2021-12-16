@@ -156,11 +156,11 @@ fi
 sed -i """
   s@view.openseadragonHost=.*@view.openseadragonHost=${VIEW_OPENSEADRAGON_HOST_AND_PORT}@
   s@view.sukesh=.*@view.sukesh=${VIEW_SUKESH}@
+  s@view.openseadragonPythonFile=.@view.openseadragonPythonFile=${VIEW_OPENSEADRAGON_PYTHON_FILE}@
+  s@view.openseadragonMagicSlicer=.@view.openseadragonMagicSlicer=${VIEW_OPENSEADRAGON_MAGIC_SLICER}@
   s@view.openseadragonDataHost=.*@view.openseadragonDataHost=${VIEW_OPENSEADRAGON_DATA_HOST}@
   s@view.openseadragonDataSourceFolder=.*@view.openseadragonDataSourceFolder=${VIEW_OPENSEADRAGON_DATA_SOURCE_FOLDER}@
   s@view.openseadragonDataDestinationFolder=.*@view.openseadragonDataDestinationFolder=${VIEW_OPENSEADRAGON_DATA_DESTINATION_FOLDER}@
-  s@view.openseadragonPythonFile=.@view.openseadragonPythonFile=${VIEW_OPENSEADRAGON_PYTHON_FILE}@
-  s@view.openseadragonMagicSlicer=.@view.openseadragonMagicSlicer=${VIEW_OPENSEADRAGON_MAGIC_SLICER}@
   s@view.catmaidHost=.*@view.catmaidHost=${VIEW_CATMAID_HOST_AND_PORT}@
   s@view.dynamicRenderHost=.*@view.dynamicRenderHost=${VIEW_DYNAMIC_RENDER_HOST_AND_PORT}@
   s@view.matchOwner=.*@view.matchOwner=${VIEW_MATCH_OWNER}@

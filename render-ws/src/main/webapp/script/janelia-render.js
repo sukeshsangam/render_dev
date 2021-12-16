@@ -584,11 +584,11 @@ JaneliaRenderServiceDataUI.prototype.buildStackQueryParameters = function(owner,
         ['dynamicRenderHost', this.dynamicRenderHost],
         ['openseadragonHost', this.openseadragonHost],
         ['sukesh', this.sukesh],
+        ['openseadragonPythonFile', this.openseadragonPythonFile],
+        ['openseadragonMagicSlicer', this.openseadragonMagicSlicer],
         ['openseadragonDataHost', this.openseadragonDataHost],
         ['openseadragonDataSourceFolder', this.openseadragonDataSourceFolder],
         ['openseadragonDataDestinationFolder', this.openseadragonDataDestinationFolder],
-        ['openseadragonPythonFile', this.openseadragonPythonFile],
-        ['openseadragonMagicSlicer', this.openseadragonMagicSlicer],
         ['catmaidHost', this.catmaidHost],
         ['ndvizHost', this.ndvizHost]
     ];
@@ -693,10 +693,10 @@ JaneliaRenderServiceDataUI.prototype.getStackSummaryHtml = function(ownerUrl, st
                     linksHtml = linksHtml + '<button id="myBtn">Prepare data for openseadragon</button>';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataHost" value="'+this.openseadragonDataHost+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="sukesh" value="'+this.sukesh+'">';
+                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonPythonFile" value="'+this.openseadragonPythonFile+'">';
+                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonPythonFile" value="'+this.openseadragonMagicSlicer+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataSourceFolder" value="'+this.openseadragonDataSourceFolder+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataDestinationFolder" value="'+this.openseadragonDataDestinationFolder+'">';
-                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonPythonFile" value="'+this.openseadragonPythonFile+'">';
-                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonMagicSlicer" value="'+this.openseadragonMagicSlicer+'">';
                   linksHtml = linksHtml + ' <a target="_blank" href="' + openseadragonUrl + '">Openseadragon</a>';
             }
             else{
