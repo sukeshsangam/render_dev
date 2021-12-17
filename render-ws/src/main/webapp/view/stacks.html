@@ -74,7 +74,7 @@ $.ajax({
             openseadragonDataDestinationFolder: document.getElementById("openseadragonDataDestinationFolder").value,
             openseadragonDataHost: document.getElementById("openseadragonDataHost").value,
             openseadragonDataSourceFolder: document.getElementById("openseadragonDataSourceFolder").value,
-            renderHost: $(location).attr('hostname')+':'$(location).attr('port')
+            renderHost: $(location).attr('hostname')+':'+$(location).attr('port')
             },
             success: function (data) {
                 console.log('Submission was successful.');

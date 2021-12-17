@@ -73,7 +73,8 @@ $.ajax({
             data_prep: document.getElementById("data_prep").value, data_prepsh: document.getElementById("data_prepsh").value,
             openseadragonDataDestinationFolder: document.getElementById("openseadragonDataDestinationFolder").value,
             openseadragonDataHost: document.getElementById("openseadragonDataHost").value,
-            openseadragonDataSourceFolder: document.getElementById("openseadragonDataSourceFolder").value
+            openseadragonDataSourceFolder: document.getElementById("openseadragonDataSourceFolder").value,
+            renderHost: $(location).attr('hostname')+':'+$(location).attr('port')
             },
             success: function (data) {
                 console.log('Submission was successful.');
