@@ -453,8 +453,6 @@ var JaneliaRenderServiceDataUI = function(queryParameters, ownerSelectId, projec
     this.openseadragonDataHost = queryParameters.map['openseadragonDataHost'];
     this.openseadragonDataSourceFolder = queryParameters.map['openseadragonDataSourceFolder'];
     this.openseadragonDataDestinationFolder = queryParameters.map['openseadragonDataDestinationFolder'];
-    this.openseadragonPythonFile = queryParameters.map['openseadragonPythonFile'];
-    this.openseadragonMagicSlicer = queryParameters.map['openseadragonMagicSlicer'];
 
     this.renderServiceData = new JaneliaRenderServiceData(queryParameters.map[ownerSelectId],
                                                           queryParameters.map[projectSelectId],
@@ -558,17 +556,6 @@ JaneliaRenderServiceDataUI.prototype.isOpenseadragonDataHostDefined = function()
     return typeof this.openseadragonDataHost !== 'undefined';
 };
 
-JaneliaRenderServiceDataUI.prototype.isOpenseadragonPythonFile = function() {
-   // console.log("this is openseadragonDataHost");
-    //console.log(this.openseadragonDataHost);
-    return typeof this.openseadragonPythonFile !== 'undefined';
-};
-
-JaneliaRenderServiceDataUI.prototype.isOpenseadragonMagicSlicer = function() {
-    //console.log("this is openseadragonDataHost");
-    //console.log(this.openseadragonDataHost);
-    return typeof this.openseadragonMagicSlicer !== 'undefined';
-};
 
 JaneliaRenderServiceDataUI.prototype.isCatmaidHostDefined = function() {
     return typeof this.catmaidHost !== 'undefined';
@@ -586,8 +573,6 @@ JaneliaRenderServiceDataUI.prototype.buildStackQueryParameters = function(owner,
         ['openseadragonHost', this.openseadragonHost],
         ['data_prep', this.data_prep],
         ['data_prepsh', this.data_prepsh],
-        ['openseadragonPythonFile', this.openseadragonPythonFile],
-        ['openseadragonMagicSlicer', this.openseadragonMagicSlicer],
         ['openseadragonDataHost', this.openseadragonDataHost],
         ['openseadragonDataSourceFolder', this.openseadragonDataSourceFolder],
         ['openseadragonDataDestinationFolder', this.openseadragonDataDestinationFolder],
@@ -696,8 +681,6 @@ JaneliaRenderServiceDataUI.prototype.getStackSummaryHtml = function(ownerUrl, st
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataHost" value="'+this.openseadragonDataHost+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="data_prep" value="'+this.data_prep+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="data_prepsh" value="'+this.data_prepsh+'">';
-                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonPythonFile" value="'+this.openseadragonPythonFile+'">';
-                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonPythonFile" value="'+this.openseadragonMagicSlicer+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataSourceFolder" value="'+this.openseadragonDataSourceFolder+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataDestinationFolder" value="'+this.openseadragonDataDestinationFolder+'">';
                   linksHtml = linksHtml + ' <a target="_blank" href="' + openseadragonUrl + '">Openseadragon</a>';

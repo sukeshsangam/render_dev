@@ -445,14 +445,14 @@ var JaneliaRenderServiceDataUI = function(queryParameters, ownerSelectId, projec
     this.shortbaseUrl = this.util.getShortRenderHost();
     this.queryParameters = queryParameters;
     this.openseadragonHost = queryParameters.map['openseadragonHost'];
+    this.data_prep = queryParameters.map['data_prep'];
+    this.data_prepsh = queryParameters.map['data_prepsh'];
     this.catmaidHost = queryParameters.map['catmaidHost'];
     this.ndvizHost = queryParameters.map['ndvizHost'];
     this.dynamicRenderHost = queryParameters.map['dynamicRenderHost'];
     this.openseadragonDataHost = queryParameters.map['openseadragonDataHost'];
     this.openseadragonDataSourceFolder = queryParameters.map['openseadragonDataSourceFolder'];
     this.openseadragonDataDestinationFolder = queryParameters.map['openseadragonDataDestinationFolder'];
-    this.openseadragonPythonFile = queryParameters.map['openseadragonPythonFile'];
-    this.openseadragonMagicSlicer = queryParameters.map['openseadragonMagicSlicer'];
 
     this.renderServiceData = new JaneliaRenderServiceData(queryParameters.map[ownerSelectId],
                                                           queryParameters.map[projectSelectId],
@@ -551,10 +551,11 @@ JaneliaRenderServiceDataUI.prototype.isOpenseadragonHostDefined = function() {
 };
 
 JaneliaRenderServiceDataUI.prototype.isOpenseadragonDataHostDefined = function() {
-    console.log("this is openseadragonDataHost");
+   // console.log("this is openseadragonDataHost");
     //console.log(this.openseadragonDataHost);
     return typeof this.openseadragonDataHost !== 'undefined';
 };
+
 
 JaneliaRenderServiceDataUI.prototype.isCatmaidHostDefined = function() {
     return typeof this.catmaidHost !== 'undefined';
@@ -570,11 +571,11 @@ JaneliaRenderServiceDataUI.prototype.buildStackQueryParameters = function(owner,
         ['renderStack', stack],
         ['dynamicRenderHost', this.dynamicRenderHost],
         ['openseadragonHost', this.openseadragonHost],
+        ['data_prep', this.data_prep],
+        ['data_prepsh', this.data_prepsh],
         ['openseadragonDataHost', this.openseadragonDataHost],
         ['openseadragonDataSourceFolder', this.openseadragonDataSourceFolder],
         ['openseadragonDataDestinationFolder', this.openseadragonDataDestinationFolder],
-        ['openseadragonPythonFile', this.openseadragonPythonFile],
-        ['openseadragonMagicSlicer', this.openseadragonMagicSlicer],
         ['catmaidHost', this.catmaidHost],
         ['ndvizHost', this.ndvizHost]
     ];
@@ -678,10 +679,10 @@ JaneliaRenderServiceDataUI.prototype.getStackSummaryHtml = function(ownerUrl, st
                //linksHtml = linksHtml + '<a href="" class="btn" onclick="return check()">Prepare Data for Openseadragon</a>';
                     linksHtml = linksHtml + '<button id="myBtn">Prepare data for openseadragon</button>';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataHost" value="'+this.openseadragonDataHost+'">';
+                    linksHtml = linksHtml + '<input type="hidden" id="data_prep" value="'+this.data_prep+'">';
+                    linksHtml = linksHtml + '<input type="hidden" id="data_prepsh" value="'+this.data_prepsh+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataSourceFolder" value="'+this.openseadragonDataSourceFolder+'">';
                     linksHtml = linksHtml + '<input type="hidden" id="openseadragonDataDestinationFolder" value="'+this.openseadragonDataDestinationFolder+'">';
-                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonPythonFile" value="'+this.openseadragonPythonFile+'">';
-                    linksHtml = linksHtml + '<input type="hidden" id="openseadragonMagicSlicer" value="'+this.openseadragonMagicSlicer+'">';
                   linksHtml = linksHtml + ' <a target="_blank" href="' + openseadragonUrl + '">Openseadragon</a>';
             }
             else{

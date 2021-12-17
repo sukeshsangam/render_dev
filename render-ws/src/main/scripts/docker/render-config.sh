@@ -159,8 +159,6 @@ sed -i """
   s@view.openseadragonHost=.*@view.openseadragonHost=${VIEW_OPENSEADRAGON_HOST_AND_PORT}@
   s@view.data_prep=.*@view.data_prep=${VIEW_DATA_PREP}@
   s@view.data_prepsh=.*@view.data_prepsh=${VIEW_DATA_PREPSH}@
-  s@view.openseadragonPythonFile=.@view.openseadragonPythonFile=${VIEW_OPENSEADRAGON_PYTHON_FILE}@
-  s@view.openseadragonMagicSlicer=.@view.openseadragonMagicSlicer=${VIEW_OPENSEADRAGON_MAGIC_SLICER}@
   s@view.openseadragonDataHost=.*@view.openseadragonDataHost=${VIEW_OPENSEADRAGON_DATA_HOST}@
   s@view.openseadragonDataSourceFolder=.*@view.openseadragonDataSourceFolder=${VIEW_OPENSEADRAGON_DATA_SOURCE_FOLDER}@
   s@view.openseadragonDataDestinationFolder=.*@view.openseadragonDataDestinationFolder=${VIEW_OPENSEADRAGON_DATA_DESTINATION_FOLDER}@

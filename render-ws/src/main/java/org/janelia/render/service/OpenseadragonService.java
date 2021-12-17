@@ -43,6 +43,8 @@ import com.jcraft.jsch.ChannelExec;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 @Path("/")
 @Api(tags = {"Openseadragon API's"})
@@ -63,7 +65,7 @@ public class OpenseadragonService {
     }
 
 
-    @Path("v1/testservice")
+    @Path("v1/openseadragon")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @ApiOperation(
@@ -76,7 +78,13 @@ public class OpenseadragonService {
                               @FormParam("password") final String password,
                               @FormParam("StackOwner") final String stackowner,
                               @FormParam("StackProject") final String stackproject,
-                              @FormParam("Stack") final String stack) {
+                              @FormParam("Stack") final String stack,
+                              @FormParam("data_prep") final String data_prep,
+                              @FormParam("data_prepsh") final String data_prepsh,
+                              @FormParam("openseadragonDataDestinationFolder") final String openseadragonDataDestinationFolder,
+                              @FormParam("openseadragonDataHost") final String openseadragonDataHost,
+                              @FormParam("openseadragonDataSourceFolder") final String openseadragonDataSourceFolder,
+                                 @FormParam("renderHost") final String renderHost) {
         String return_error = "";
         LOG.info("getTestService: entry, clustername={}, username={}, password={}",
                 clustername, username, password);
@@ -102,7 +110,9 @@ public class OpenseadragonService {
             // create the execution channel over the session
             ChannelExec channelExec = (ChannelExec) session.openChannel("exec");
             // Set the command to execute on the channel and execute the command
-            channelExec.setCommand("bsub -P test -R 'rusage[mem=6000]' -q standard 'python3 /research/sharedresources/cbi/common/derived_data_preparation_code/data_preparation.py "+stackowner+" "+stackproject+" "+stack+"'");
+            channelExec.setCommand("bsub -P test -R 'rusage[mem=6000]' -q standard 'python3 "+data_prep+" "+stackowner+" "+stackproject+" "+stack+" "
+                    +data_prep+" "+data_prepsh+" "+openseadragonDataDestinationFolder+" "+openseadragonDataHost+" "+openseadragonDataSourceFolder+
+                    " "+renderHost+"'");
             channelExec.connect();
 
             // Get an InputStream from this channel and read messages, generated
@@ -133,6 +143,7 @@ public class OpenseadragonService {
 
         //return clustername+" "+username+" "+password+" "+stackowner+" "+stackproject+" "+stack+ " "+return_error+" "+line;
         return line;
+        //return host_name;
     }
 
     private static final Logger LOG = LoggerFactory.getLogger(OpenseadragonService.class);
